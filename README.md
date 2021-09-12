@@ -19,16 +19,16 @@ Template Repository to easily get started with CD pipeline for model serving wit
 
   on:
   push:
-      branches:
+    branches:
       - main
 
   jobs:
   build:
-      runs-on: ubuntu-latest
-      steps:
+    runs-on: ubuntu-latest
+    steps:
       - uses: actions/checkout@v2
       - uses: akhileshns/heroku-deploy@v3.12.12
-          with:
+        with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "scalable-example"
           heroku_email: "example@thinkawt.com"
